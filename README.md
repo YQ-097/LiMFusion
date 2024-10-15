@@ -1,19 +1,18 @@
-# BTSFusion: Fusion of infrared and visible image via a mechanism of  balancing texture and salience
-Yao Qian, Gang Liu∗, Haojie Tang, Mengliang Xing, Rui Chang
+# LiMFusion: Infrared and visible image fusion via local information measurement
+Yao Qian, Haojie Tang, Gang Liu∗, Mengliang Xing, Gang Xiao,  Durga Prasad Bavirisetti
 
 Published in: Optics and Lasers in Engineering
 
-- [parer](https://www.sciencedirect.com/science/article/abs/pii/S0143816623004542)
+- [parer](https://www.sciencedirect.com/science/article/abs/pii/S0143816624004135)
 
 ## Abstract
-In recent years, deep learning research has received significant attention in the field of infrared and visible  image fusion.  However, the issue of designing loss functions in deep learning-based image fusion methods has  not been well-addressed.  To tackle this problem, we propose a novel mechanism of utilizing traditional fusion  methods as loss functions to guide the training of deep learning models.  We incorporate the superior aspects  of two traditional methods, namely Guided Filter (GF) and Latent Low-Rank Representation (LatLRR), into  the design of the loss function, proposing a fusion method for infrared and visible images that balances both  texture and saliency, termed BTSFusion.  The proposed network is not only lightweight but also preserves the  maximum amount of valuable information in source images.  It is worth noting that the complexity of BTSFusion  primarily lies in the design of the loss function, which allows it to remain an end-to-end network, as demonstrated  by efficiency comparison experiments that highlight the excellent computational efficiency of our algorithm.  Furthermore, through subjective observations and objective comparisons, we validated the performance of the  proposed method by comparing it with twelve state-of-the-art methods on two public datasets.
+Most image fusion methods currently achieve satisfactory results under normal conditions. However, in complex scenes, the problem of information conflict between source images has not been effectively resolved. Sometimes, effective information from one source image may be masked by noise from another source image. In this paper, by organically combining the traditional decomposition strategy and the attention mechanism, we propose a novel infrared and visible image fusion network based on local information measurement, named LiMFusion. Specifically, the source image is decomposed by utilizing fourth-order partial differential equations to obtain high-frequency and low-frequency layers. Feature representation and information preservation capabilities are enhanced by well-designed spatial attention blocks as well as channel attention blocks combined with the UNet architecture. Moreover, a new localized image information measurement method based on histogram of oriented gradients and a spatial-aware loss function are proposed to make the fusion network more inclined to focus on the features of the region of interest. Extensive experimental results indicate that this method can more comprehensively reflect the brightness information and texture details of the source image, effectively addressing the challenges of fusion in complex environments.
 ## Framework
-![image](https://github.com/YQ-097/BTSFusion/assets/68978140/4da3f349-0ce2-4070-924b-b41ddfe473bd)
+<img width="1421" alt="屏幕截图 2024-10-15 105140" src="https://github.com/user-attachments/assets/1af688cb-0d9c-4bd8-bcc7-ab9ca8607c25">
 
 ## Recommended Environment
 
- - [x] pytorch 1.12.1 
- - [x] scipy 1.2.1   
+ - [x] pytorch 1.12.1   
  - [x] numpy 1.11.3
 
 ## To Train
@@ -23,22 +22,16 @@ The training dataset is temporarily not publicly available. If needed, please co
 ## To Test
 First, parameterize the structure of the trained model, and then run the testing program.
 
-    python net_repvgg.py
-    python test1_image.py
+    python test_image.py
 ## Citation
 
 ```
-@article{QIAN2024107925,
-title = {BTSFusion: Fusion of infrared and visible image via a mechanism of balancing texture and salience},
-journal = {Optics and Lasers in Engineering},
-volume = {173},
-pages = {107925},
-year = {2024},
-issn = {0143-8166},
-doi = {https://doi.org/10.1016/j.optlaseng.2023.107925},
-url = {https://www.sciencedirect.com/science/article/pii/S0143816623004542},
-author = {Yao Qian and Gang Liu and Haojie Tang and Mengliang Xing and Rui Chang},
-keywords = {Image fusion, Guided filter, Latent low-rank representation, Lightweight network, Deep learning},
-abstract = {In recent years, deep learning research has received significant attention in the field of infrared and visible image fusion. However, the issue of designing loss functions in deep learning-based image fusion methods has not been well-addressed. To tackle this problem, we propose a novel mechanism of utilizing traditional fusion methods as loss functions to guide the training of deep learning models. We incorporate the superior aspects of two traditional methods, namely Guided Filter (GF) and Latent Low-Rank Representation (LatLRR), into the design of the loss function, proposing a fusion method for infrared and visible images that balances both texture and saliency, termed BTSFusion. The proposed network is not only lightweight but also preserves the maximum amount of valuable information in source images. It is worth noting that the complexity of BTSFusion primarily lies in the design of the loss function, which allows it to remain an end-to-end network, as demonstrated by efficiency comparison experiments that highlight the excellent computational efficiency of our algorithm. Furthermore, through subjective observations and objective comparisons, we validated the performance of the proposed method by comparing it with twelve state-of-the-art methods on two public datasets. The source code will be publicly available at https://github.com/YQ-097/BTSFusion.}
+@article{qian2024limfusion,
+  title={LiMFusion: Infrared and visible image fusion via local information measurement},
+  author={Qian, Yao and Tang, Haojie and Liu, Gang and Xing, Mengliang and Xiao, Gang and Bavirisetti, Durga Prasad},
+  journal={Optics and Lasers in Engineering},
+  volume={181},
+  pages={108435},
+  year={2024},
+  publisher={Elsevier}
 }
-```
