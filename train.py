@@ -100,24 +100,24 @@ def train(original_imgs_path, img_flag, alpha, w1, w2):
 			image_paths_vi = [x.replace('IR', 'VI_RGB') for x in image_paths_ir]
 			img_vi = utils.get_train_images_auto(image_paths_vi, height=args.HEIGHT, width=args.WIDTH, mode=img_flag)
 
-			image_paths_ir_H = [x.replace(r"D:\qianyao\code\parer4\FPDE\MSRS\IR", r'D:\qianyao\code\parer4\FPDE\output\IR_H') for x in image_paths_ir]
+			image_paths_ir_H = [x.replace(r"D:\FPDE\MSRS\IR", r'D:\FPDE\output\IR_H') for x in image_paths_ir]
 			ir_H = utils.get_train_images_auto(image_paths_ir_H, height=args.HEIGHT, width=args.WIDTH, mode=img_flag)
 
 			#print(image_paths_ir_H)
 
-			image_paths_ir_L = [x.replace(r"D:\qianyao\code\parer4\FPDE\MSRS\IR", r'D:\qianyao\code\parer4\FPDE\output\IR_L') for x in image_paths_ir]
+			image_paths_ir_L = [x.replace(r"D:\FPDE\MSRS\IR", r'D:\FPDE\output\IR_L') for x in image_paths_ir]
 			ir_L = utils.get_train_images_auto(image_paths_ir_L, height=args.HEIGHT, width=args.WIDTH, mode=img_flag)
 
-			image_paths_ir_hog = [x.replace(r"D:\qianyao\code\parer4\FPDE\MSRS\IR", r'D:\qianyao\code\parer4\FPDE\output\IR_hog') for x in image_paths_ir]
+			image_paths_ir_hog = [x.replace(r"D:\FPDE\MSRS\IR", r'D:\FPDE\output\IR_hog') for x in image_paths_ir]
 			ir_map = utils.get_train_images_auto(image_paths_ir_hog, height=args.HEIGHT, width=args.WIDTH, mode=img_flag)
 
-			image_paths_vi_L = [x.replace(r"D:\qianyao\code\parer4\FPDE\MSRS\IR", r'D:\qianyao\code\parer4\FPDE\output\VIS_L') for x in image_paths_ir]
+			image_paths_vi_L = [x.replace(r"D:\FPDE\MSRS\IR", r'D:\FPDE\output\VIS_L') for x in image_paths_ir]
 			vi_L = utils.get_train_images_auto(image_paths_vi_L, height=args.HEIGHT, width=args.WIDTH, mode=img_flag)
 
-			image_paths_vi_H = [x.replace(r"D:\qianyao\code\parer4\FPDE\MSRS\IR", r'D:\qianyao\code\parer4\FPDE\output\VIS_H') for x in image_paths_ir]
+			image_paths_vi_H = [x.replace(r"D:\FPDE\MSRS\IR", r'D:\FPDE\output\VIS_H') for x in image_paths_ir]
 			vi_H = utils.get_train_images_auto(image_paths_vi_H, height=args.HEIGHT, width=args.WIDTH, mode=img_flag)
 
-			image_paths_vi_hog = [x.replace(r"D:\qianyao\code\parer4\FPDE\MSRS\IR", r'D:\qianyao\code\parer4\FPDE\output\VIS_hog') for x in image_paths_ir]
+			image_paths_vi_hog = [x.replace(r"D:\FPDE\MSRS\IR", r'D:\FPDE\output\VIS_hog') for x in image_paths_ir]
 			vi_map = utils.get_train_images_auto(image_paths_vi_hog, height=args.HEIGHT, width=args.WIDTH, mode=img_flag)
 
 			count += 1
