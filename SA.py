@@ -9,7 +9,7 @@ class SpatialAttention(nn.Module):
         self.conv=nn.Conv2d(1,1,kernel_size=kernel_size,padding=kernel_size//2)
         self.sigmoid=nn.Sigmoid()
     
-    def forward(self, x) : #浅层信息部分，只平均不取最大
+    def forward(self, x) : 
         #max_result,_=torch.max(x,dim=1,keepdim=True)
         avg_result=torch.mean(x,dim=1,keepdim=True)
         result=avg_result #torch.cat([max_result,avg_result],1)
